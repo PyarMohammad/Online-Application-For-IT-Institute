@@ -1,0 +1,92 @@
+create database OAFII
+use OAFII
+
+create table tbl_ApplicationForm1
+(
+  id int primary key identity,
+  FullName varchar(50),
+  FatherName varchar(50),
+  MotherName varchar(50),
+  PermanentAddress varchar(50),
+  PinCode int,
+  State varchar(50),
+  City varchar(50),
+  MobileNo int,
+  DOB varchar(50),
+  Email varchar(50),
+  RegistrationNo int,
+  ApplicationStatus varchar(50)
+)
+
+create table tbl_State
+(
+sid int primary key identity,
+sname varchar(50)
+)
+
+insert into tbl_State(sname)values('Andhra Pradesh'),('Arunachal Pradesh'),('Assam'),('Bihar'),('Chhattisgarh'),('Goa'),('Gujarat'),('Haryana'),('Himachal Pradesh'),('Jharkhand'),('Karnataka'),('Kerala'),('Madhya Pradesh'),('Maharashtra'),('Manipur'),('Punjab'),('Rajasthan'),('Uttar Pradesh')
+
+select*from tbl_State
+
+create table tbl_City
+(
+cid int primary key identity,
+cname varchar(50)
+)
+
+insert into tbl_City(cname)values('Mumbai'),('Delhi'),('Bangalore'),('Hyderabad'),('Ahmedabad'),('Chennai'),('Kolkata'),('Surat'),('Pune'),('Jaipur'),('Lucknow'),('Bhopal'),('Visakhapatnam'),('Patna'),('Ranchi'),('Srinagar'),('Raipur'),('Chandigarh')
+
+select*from tbl_City
+
+
+create table tbl_ApplicationForm2
+(
+  id int primary key identity,
+  Qualifyingexam varchar(50),
+  NameOfUniversity varchar(50),
+  YearOfPassing int,
+  DDNumber int,
+  DDDate varchar(50),
+  Per_Marks varchar(50),
+  Amount int,
+  Center varchar(50),
+  Course varchar(50)
+)
+
+create table tbl_Choice
+(
+  id int primary key identity,
+  RegistrationNo int,
+  Collage_name1 varchar(50),
+  Collage_name2 varchar(50),
+  Collage_name3 varchar(50),
+  Collage_name4 varchar(50),
+  Collage_name5 varchar(50)
+)
+
+create table tbl_FillupForm
+(
+  id int primary key identity,
+  RegistrationNo int,
+  Name varchar(50),
+  FatherName varchar(50),
+  Stream varchar(50),
+  TotalMarks int,
+  Ranks int
+)
+
+create table tbl_SeatAllotment
+(
+  id int primary key identity,
+  RegistrationNo int,
+  Stream varchar(50),
+  Collage varchar(50)
+)
+
+select *from tbl_ApplicationForm1
+select *from tbl_ApplicationForm2
+select *from tbl_Choice
+select *from tbl_FillupForm
+select *from tbl_SeatAllotment
+select *from tbl_State
+select *from tbl_City
